@@ -1,15 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'mysecretkey'
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return render_template('index.html', content = 'Home Page')
-
-@app.route('/about')
-def about():
-    return render_template('about.html', content = 'About Page')
+from routes import *
 
 if __name__ == '__main__':
     app.run(debug=True)

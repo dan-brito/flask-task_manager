@@ -1,5 +1,11 @@
 {% extends "base.html" %}
+
 {% block content %}
-    <h1>About</h1>
-    <p>{{content}}</p>
+<h1>{{content}}</h1>
+<form action="/about" method="post">
+    {{ form.csrf}}
+    {{ form.title()}} 
+    {{ form.title.label}}
+    {{ form.submit() }}
+</form>
 {% endblock %}
