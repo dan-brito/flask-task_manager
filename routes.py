@@ -8,9 +8,12 @@ import forms
 def index():
     return render_template('index.html', content = 'Home Page')
 
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 def about():
     form = forms.Form()
+    if form.validate_on_submit():
+        print("Form Submitted:", form.title.data)
+        return render_template('about.html', content = 'About Page', form=form, title=form.title.data)
     return render_template('about.html', content = 'About Page', form=form)
 
 

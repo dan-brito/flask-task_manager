@@ -3,9 +3,14 @@
 {% block content %}
 <h1>{{content}}</h1>
 <form action="/about" method="post">
-    {{ form.csrf}}
-    {{ form.title()}} 
-    {{ form.title.label}}
-    {{ form.submit() }}
+    {{ form.csrf_token }}
+    {{ form.title.label }}
+    {{ form.title }}
+    {{ form.submit }}
 </form>
+
+{% if title %}
+<h2> Submitted Data: {{title}}</h2>
+{% endif %}
+
 {% endblock %}
