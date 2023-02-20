@@ -7,7 +7,6 @@ importlib-metadata==6.0.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.2
-pkg_resources==0.0.0
 SQLAlchemy==2.0.2
 typing_extensions==4.4.0
 Werkzeug==2.2.2
